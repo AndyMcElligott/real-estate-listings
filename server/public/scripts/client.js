@@ -1,6 +1,5 @@
 $('document').ready(function(){
-    $('#typeFilterIn').on('change', function(){ getHouse() });
-    $('#cityFilterIn').on('change', function(){ getHouse() });
+    $('.orderInputs').on('change', function(){ getHouse() });
     $('#houseOut').on('click', '.delete', deleteHouse);
     $('#submitButton').on('click', addHouse);
 
@@ -64,8 +63,12 @@ function getHouse(){
     }
 
     query = $('#cityFilterIn').val();
-    if(query) url += `${(queried) ? '&' : '?'}city=${query}`;
-
+    if(query){
+        url += `${(queried) ? '&' : '?'}city=${query}`;
+        queried = true;
+    }
+    url += `${(queried)?'&':'?'}order=${$('#orderByIn').val()}&reverse=${document.getElementById("orderReverseIn").checked}`;
+    console.log(url);
     $.ajax({
         type: 'GET',
         url: url
