@@ -47,7 +47,24 @@
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
-        <div class="col-8" id="houseOut">
+        <div class="col-8 text-center">
+            <div class="form-inline m-3">
+                <div class="form-group">
+                  <label for="typeFilterIn" class="mr-2">Filter by type: </label>
+                  <select class="form-control" id="typeFilterIn">
+                    <option value="">None</option>
+                    <option value="sale">For Sale</option>
+                    <option value="rent">For Rent</option>
+                  </select>
+                  <label for="cityFilterIn" class="mx-2">Filter by city: </label>
+                  <select class="form-control" id="cityFilterIn">
+                    <option value="">Any</option>
+                    <!-- Filled by AJAX -->
+                  </select>
+                </div>
+            </div>
+          <div id="houseOut">
+          </div>
         </div>
       </div>
 </body>

@@ -1,13 +1,15 @@
 $('document').ready(function(){
     $('#typeFilterIn').on('change', function(){ getHouse() });
     $('#cityFilterIn').on('change', function(){ getHouse() });
+    $('#houseOut').on('click', '.delete', deleteHouse)
+
     populateCities();
     getHouse();
 })
 
 function deleteHouse() {
     console.log('deleting a house');
-    let id = $(this).closest('tr').data('id');
+    let id = $(this).closest('.card').data('id');
     $.ajax({
         type: 'DELETE',
         url: `/house/${id}`
