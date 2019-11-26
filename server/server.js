@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
+
 const houses = require('./routes/house.router');
 
 // Serve back static files by default
