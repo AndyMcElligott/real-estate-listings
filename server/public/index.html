@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Zzilow</title>
+  <link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One|Ubuntu&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap-4.3.1.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script type="text/javascript" src="./vendors/jQuery-3.4.1.min.js"></script>
@@ -13,59 +14,71 @@
 <body>
   <header>
     <h1>DARC Real Estate Professionals</h1>
+    <h3>We offer homes to people who want them</h3>
   </header>
-  <div class="main">
-    <form>
-      <div class="form-group">
-        <label for="sqftIn">Square Feet</label>
-        <input type="number" class="form-control" id="sqftIn" placeholder="Enter Square Footage">
+  <div id="main">
+    
+
+      <div class="row">
+        <div class="col-4">
+          <form>
+            <div class="form-group">
+              <label for="typeIn">Sell or Rent</label>
+              <select class="form-control" id="typeIn">
+                <option>-select-</option>
+                <option>Sale</option>
+                <option>Rent</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cityIn">City</label>
+              <input type="text" class="form-control" id="cityIn" placeholder="Enter City">
+            </div>
+            <div class="form-group">
+              <label for="costIn">Cost</label>
+              <input type="number" class="form-control" id="costIn" placeholder="Enter Cost">
+            </div>
+            <div class="form-group">
+              <label for="sqftIn">Square Feet</label>
+              <input type="number" class="form-control" id="sqftIn" placeholder="Enter Square Footage">
+            </div>
+            <div class="form-group">
+              <label for="imageIn">Image</label>
+              <input type="text" class="form-control" id="imageIn" placeholder="Enter Image URL">
+            </div>
+            <button id="submitButton" type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+        <div class="col-8 text-center">
+            <div class="form-inline m-3">
+                <div class="form-group">
+                  <label for="typeFilterIn" class="mr-2">Filter by type: </label>
+                  <select class="form-control orderInputs" id="typeFilterIn">
+                    <option value="">None</option>
+                    <option value="sale">For Sale</option>
+                    <option value="rent">For Rent</option>
+                  </select>
+                  <label for="cityFilterIn" class="mx-2">Filter by city: </label>
+                  <select class="form-control orderInputs" id="cityFilterIn">
+                    <option value="">Any</option>
+                    <!-- Filled by AJAX -->
+                  </select>
+                  <label for="orderIn" class="mx-2">Order by: </label>
+                  <select class="form-control orderInputs" id="orderByIn">
+                    <option value="cost">Cost</option>
+                    <option value="city">Square Foot</option>
+                  </select>
+                  <div class="form-check ml-3 orderInputs">
+                    <input id="orderReverseIn" type="checkbox" val="Reverse" class="form-check-input orderInputs">
+                    <label for="orderReverseIn" class="form-check-label">
+                        Reverse
+                    </label>
+                  </div>
+                </div>
+            </div>
+          <div id="houseOut">
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="costIn">Cost</label>
-        <input type="number" class="form-control" id="costIn" placeholder="Cost">
-      </div>
-      <div class="form-group">
-        <select class="form-control" id="typeIn">
-          <option>Sale</option>
-          <option>Rent</option>
-        </select>
-        <label for="typeIn">Sell or Rent</label>
-      </div>
-      <div class="form-group">
-        <label for="cityIn">City</label>
-        <input type="text" class="form-control" id="cityIn" placeholder="City">
-      </div>
-      <div class="form-group ">
-        <label for="imageIn">Image</label>
-        <input type="text" class="form-control" id="imageIn" placeholder="Add Image URL">
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <div class="form-inline m-3">
-      <div class="form-group">
-        <label for="typeFilterIn" class="mr-2">Filter by type: </label>
-        <select class="form-control" id="typeFilterIn">
-          <option value="">None</option>
-          <option value="sale">For Sale</option>
-          <option value="rent">For Rent</option>
-        </select>
-        <label for="cityFilterIn" class="mx-2">Filter by city: </label>
-        <select class="form-control" id="cityFilterIn">
-          <option value="">Any</option>
-          <!-- Filled by AJAX -->
-        </select>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  
 </body>
 </html>
