@@ -1,0 +1,11 @@
+#main {
+    width: 80%;
+    margin: 0 auto
+}
+
+header {
+    text-align: center;
+    border: solid black 1px;
+    padding: 1rem;
+    margin-bottom: 4rem;
+}
