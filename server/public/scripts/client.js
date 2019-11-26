@@ -90,9 +90,9 @@ function displayHouse(house){ //need VAR to be called in function
           <img src="${taco.image_path}" class="card-img-top" alt="...">
           <div class="card-body">
               <h5>${taco.city}</h5>
-              <h5>${taco.cost}</h5>
+              <h5>$${taco.cost}</h5>
               <h5>${taco.type}</h5>
-              <p class="card-text">${taco.sqft}</p>
+              <p class="card-text">${taco.sqft} ft<sup>2</sup></p>
               <a href="#" class="btn btn-primary delete">DELETE</a>
           </div>
         </div>
