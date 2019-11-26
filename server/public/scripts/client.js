@@ -15,11 +15,11 @@ function deleteHouse() {
 function addHouse() {
     console.log('in POST CLIENT');
     let objectToSend = {
-        cost: $('').val(),
-        sqft: $('').val(),
-        type: $('').val(),
-        city: $('').val(),
-        image_path: $('').val(),
+        cost: $('#costIn').val(),
+        sqft: $('#sqftIn').val(),
+        type: $('#typeIn').val(),
+        city: $('#cityIn').val(),
+        image_path: $('#imageIn').val(),
     } // end object, fill in with input fields from HTML
     $.ajax({
         type: 'POST',
@@ -28,6 +28,10 @@ function addHouse() {
     }).then( function( response){
         console.log('back from POST CLIENT:', response);
         // display function goes here ----!
+        $('#costIn').val('');
+        $('#sqftIn').val('');
+        $('#cityIn').val('');
+        $('#imageIn').val('');
     }).catch( function(err){
         alert('unable to add house, see console for details');
         console.log(err);
