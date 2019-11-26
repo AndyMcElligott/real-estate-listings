@@ -42,6 +42,7 @@ function addHouse() {
         $('#sqftIn').val('');
         $('#cityIn').val('');
         $('#imageIn').val('');
+
         getHouse();
         $('#cityFilterIn').empty();
         $('#cityFilterIn').append('<option value="">Any</option>');
@@ -86,8 +87,8 @@ function displayHouse(house){ //need VAR to be called in function
             <img src="${taco.image_path}" class="card-img-top" alt="A $${taco.cost} house in ${taco.city}">
             <div class="card-body">
                 <h5>${taco.city}</h5>
-                <h5>${taco.cost}</h5>
-                <p class="card-text">${taco.sqft}</p>
+                <h5>$${taco.cost}</h5>
+                <p class="card-text">${taco.sqft} ft<sup>2</sup></p>
                 <a href="#" class="btn btn-primary delete">DELETE</a>
             </div>
         </div>`);
