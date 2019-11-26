@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 const houses = require('./routes/house.router');
+app.use('/house', houses);
 
 // Serve back static files by default
 app.use(express.static('server/public'));
