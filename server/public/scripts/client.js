@@ -73,6 +73,7 @@ function displayHouse(house){ //need VAR to be called in function
         <div class="card-body">
             <h5>${taco.city}</h5>
             <h5>${taco.cost}</h5>
+            <h5>${taco.type}</h5>
             <p class="card-text">${taco.sqft}</p>
             <a href="#" class="btn btn-primary delete">DELETE</a>
         </div>
