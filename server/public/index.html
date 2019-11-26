@@ -43,11 +43,16 @@
     </form>
     <div class="form-inline m-3">
       <div class="form-group">
-        <label for="filterIn">Filter: </label>
-        <select class="form-control" id="filterIn">
+        <label for="typeFilterIn" class="mr-2">Filter by type: </label>
+        <select class="form-control" id="typeFilterIn">
           <option value="">None</option>
           <option value="sale">For Sale</option>
           <option value="rent">For Rent</option>
+        </select>
+        <label for="cityFilterIn" class="mx-2">Filter by city: </label>
+        <select class="form-control" id="cityFilterIn">
+          <option value="">Any</option>
+          <!-- Filled by AJAX -->
         </select>
       </div>
     </div>
