@@ -32,7 +32,7 @@ router.get('/', (req, res)=>{
     let config = [];
     let queryText = `SELECT * FROM "listings"`;
     if(req.query.type){
-        queryText += ` WHERE "type" = $${config.length + 1}`;
+        queryText += ` WHERE "type" ILIKE $${config.length + 1}`;
         config.push(`${req.query.type}`);
         queried = true;
     }
@@ -41,6 +41,13 @@ router.get('/', (req, res)=>{
         config.push(`${req.query.city}`);
         queried = true;
     }
+    if(req.query.order){
+        queryText += ` ORDER BY ${req.query.order}`;
+        if(req.query.reverse === 'true'){
+            queryText += ' DESC';
+        }
+    }
+
     queryText += ';';
     pool.query(queryText, config)
         .then((result)=>{

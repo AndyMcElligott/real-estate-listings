@@ -1,7 +1,7 @@
 $('document').ready(function(){
-    $('#typeFilterIn').on('change', function(){ getHouse() });
-    $('#cityFilterIn').on('change', function(){ getHouse() });
-    $('#houseOut').on('click', '.delete', deleteHouse)
+    $('.orderInputs').on('change', function(){ getHouse() });
+    $('#houseOut').on('click', '.delete', deleteHouse);
+    $('#submitButton').on('click', addHouse);
 
     populateCities();
     getHouse();
@@ -41,6 +41,11 @@ function addHouse() {
         $('#sqftIn').val('');
         $('#cityIn').val('');
         $('#imageIn').val('');
+
+        getHouse();
+        $('#cityFilterIn').empty();
+        $('#cityFilterIn').append('<option value="">Any</option>');
+        populateCities();
     }).catch( function(err){
         alert('unable to add house, see console for details');
         console.log(err);
@@ -58,8 +63,12 @@ function getHouse(){
     }
 
     query = $('#cityFilterIn').val();
-    if(query) url += `${(queried) ? '&' : '?'}city=${query}`;
-
+    if(query){
+        url += `${(queried) ? '&' : '?'}city=${query}`;
+        queried = true;
+    }
+    url += `${(queried)?'&':'?'}order=${$('#orderByIn').val()}&reverse=${document.getElementById("orderReverseIn").checked}`;
+    console.log(url);
     $.ajax({
         type: 'GET',
         url: url
@@ -78,13 +87,14 @@ function displayHouse(house){ //need VAR to be called in function
         let taco = house[i];
         let newEl = $(`
         <div class="card" style="width: 18rem;">
-            <img src="${taco.image_path}" class="card-img-top" alt="A $${taco.cost} house in ${taco.city}">
-            <div class="card-body">
-                <h5>${taco.city}</h5>
-                <h5>$${taco.cost}</h5>
-                <p class="card-text">${taco.sqft} sq ft</p>
-                <a href="#" class="btn btn-outline-danger delete">DELETE</a>
-            </div>
+          <img src="${taco.image_path}" class="card-img-top" alt="A $${taco.cost} house in ${taco.city}">
+          <div class="card-body">
+              <h5>${taco.city}</h5>
+              <h5>${taco.cost}</h5>
+              <h5>${taco.type}</h5>
+              <p class="card-text">${taco.sqft}</p>
+              <a href="#" class="btn btn-outline-danger delete">DELETE</a>
+          </div>
         </div>`);
         $(`#houseOut`).append(newEl);
         newEl.data('id', taco.id);

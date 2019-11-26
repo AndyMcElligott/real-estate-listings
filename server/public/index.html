@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Zzilow</title>
   <link href="https://fonts.googleapis.com/css?family=Quicksand|Saira+Stencil+One|Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One|Ubuntu&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap-4.3.1.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script type="text/javascript" src="./vendors/jQuery-3.4.1.min.js"></script>
@@ -46,24 +47,35 @@
               <input type="text" class="form-control" id="imageIn" placeholder="Enter Image URL">
             </div>
             <div class="form-group row">
-            <button type="submit" class="btn btn-success">Submit</button>
-          </div>
+              <button type="submit" id="submitButton" class="btn btn-success">Submit</button>
+            </div>
           </form>
         </div>
         <div class="col-8 text-center">
             <div class="form-inline m-3">
                 <div class="form-group">
                   <label for="typeFilterIn" class="mr-2">Filter by type: </label>
-                  <select class="form-control" id="typeFilterIn">
+                  <select class="form-control orderInputs" id="typeFilterIn">
                     <option value="">None</option>
                     <option value="sale">For Sale</option>
                     <option value="rent">For Rent</option>
                   </select>
                   <label for="cityFilterIn" class="mx-2">Filter by city: </label>
-                  <select class="form-control" id="cityFilterIn">
+                  <select class="form-control orderInputs" id="cityFilterIn">
                     <option value="">Any</option>
                     <!-- Filled by AJAX -->
                   </select>
+                  <label for="orderIn" class="mx-2">Order by: </label>
+                  <select class="form-control orderInputs" id="orderByIn">
+                    <option value="cost">Cost</option>
+                    <option value="city">Square Foot</option>
+                  </select>
+                  <div class="form-check ml-3 orderInputs">
+                    <input id="orderReverseIn" type="checkbox" val="Reverse" class="form-check-input orderInputs">
+                    <label for="orderReverseIn" class="form-check-label">
+                        Reverse
+                    </label>
+                  </div>
                 </div>
             </div>
             <div id="houseOut" class="row">
