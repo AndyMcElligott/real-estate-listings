@@ -20,8 +20,32 @@ body {
 
 h3 {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem
 }
 
 label {
     font-size: 1.5rem;
 }
+
+.col-8 {
+    padding: 1rem;
+    border: solid black 2px;
+}
+
+.card {
+    margin: .5rem;
+    background-color: #96bfcc;
+    border: solid black 1px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+
+}
+
+#houseOut {
+    margin-left: 3rem;
+}
+
+form {
+    margin-top: 3rem
+}
+
