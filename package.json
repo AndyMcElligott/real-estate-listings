@@ -1,0 +1,25 @@
+{
+  "name": "trifid-real-estate-listings",
+  "version": "1.0.0",
+  "description": "## Technologies Used - jQuery  - Express - Node - SQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmercertaylor/trifid-real-estate-listings.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmercertaylor/trifid-real-estate-listings/issues"
+  },
+  "homepage": "https://github.com/dmercertaylor/trifid-real-estate-listings#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^7.14.0"
+  }
+}
