@@ -1,7 +1,8 @@
 $('document').ready(function(){
     $('#typeFilterIn').on('change', function(){ getHouse() });
     $('#cityFilterIn').on('change', function(){ getHouse() });
-    $('#houseOut').on('click', '.delete', deleteHouse)
+    $('#houseOut').on('click', '.delete', deleteHouse);
+    $('#submitButton').on('click', addHouse);
 
     populateCities();
     getHouse();
@@ -41,6 +42,10 @@ function addHouse() {
         $('#sqftIn').val('');
         $('#cityIn').val('');
         $('#imageIn').val('');
+        getHouse();
+        $('#cityFilterIn').empty();
+        $('#cityFilterIn').append('<option value="">Any</option>');
+        populateCities();
     }).catch( function(err){
         alert('unable to add house, see console for details');
         console.log(err);
