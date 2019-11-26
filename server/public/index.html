@@ -50,32 +50,38 @@
           </form>
         </div>
         <div class="col-8 text-center">
-            <div class="form-inline m-3">
-                <div class="form-group">
-                  <label for="typeFilterIn" class="mr-2">Filter by type: </label>
-                  <select class="form-control orderInputs" id="typeFilterIn">
-                    <option value="">None</option>
-                    <option value="sale">For Sale</option>
-                    <option value="rent">For Rent</option>
-                  </select>
-                  <label for="cityFilterIn" class="mx-2">Filter by city: </label>
-                  <select class="form-control orderInputs" id="cityFilterIn">
-                    <option value="">Any</option>
-                    <!-- Filled by AJAX -->
-                  </select>
-                  <label for="orderIn" class="mx-2">Order by: </label>
-                  <select class="form-control orderInputs" id="orderByIn">
-                    <option value="cost">Cost</option>
-                    <option value="city">Square Foot</option>
-                  </select>
-                  <div class="form-check ml-3 orderInputs">
-                    <input id="orderReverseIn" type="checkbox" val="Reverse" class="form-check-input orderInputs">
-                    <label for="orderReverseIn" class="form-check-label">
-                        Reverse
-                    </label>
-                  </div>
+          <div class="form-inline m-3">
+              <div class="form-group">
+                <label for="typeFilterIn" class="mr-2">Filter by type: </label>
+                <select class="form-control orderInputs" id="typeFilterIn">
+                  <option value="">None</option>
+                  <option value="sale">For Sale</option>
+                  <option value="rent">For Rent</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cityFilterIn" class="mx-2">Filter by city: </label>
+                <select class="form-control orderInputs" id="cityFilterIn">
+                  <option value="">Any</option>
+                  <!-- Filled by AJAX -->
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="orderIn" class="mx-2">Order by: </label>
+                <select class="form-control orderInputs" id="orderByIn">
+                  <option value="cost">Cost</option>
+                  <option value="city">Square Foot</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <div class="form-check ml-3 orderInputs">
+                  <input id="orderReverseIn" type="checkbox" val="Reverse" class="form-check-input orderInputs">
+                  <label for="orderReverseIn" class="form-check-label">
+                      Reverse
+                  </label>
                 </div>
-            </div>
+              </div>
+          </div>
           <div id="houseOut">
           </div>
         </div>

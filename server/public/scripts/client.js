@@ -95,7 +95,8 @@ function displayHouse(house){ //need VAR to be called in function
               <p class="card-text">${taco.sqft}</p>
               <a href="#" class="btn btn-primary delete">DELETE</a>
           </div>
-        </div>`);
+        </div>
+        `);
         $(`#houseOut`).append(newEl);
         newEl.data('id', taco.id);
     }
