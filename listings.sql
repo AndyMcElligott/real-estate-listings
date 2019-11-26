@@ -1,3 +1,12 @@
+CREATE TABLE listings(
+	"id" SERIAL PRIMARY KEY,
+	"cost" INTEGER,
+	"sqft" INTEGER,
+	"type" VARCHAR(128),
+    "city" VARCHAR (64),
+    "image_path" VARCHAR(256)
+);
+
 INSERT INTO "listings" ("cost", "sqft", "type", "city", "image_path")
 VALUES (123000, 1500, 'sale', 'Forest Lake', 'shiny.jpg'),
 (90000, 1200, 'sale', 'Blaine', 'stony.jpg'),
@@ -26,3 +35,5 @@ VALUES (123000, 1500, 'sale', 'Forest Lake', 'shiny.jpg'),
 (1100, 1200, 'rent', 'Savage', 'rental.jpg'),
 (950, 1200, 'rent', 'Robbinsdale', 'rental2.jpg'),
 (700, 650, 'rent', 'Marshall', 'classic-flats.jpg');
+
+SELECT * FROM listings;
