@@ -1,3 +1,9 @@
+console.log( 'js' );
+
+$(document).ready(function(){
+
+})
+
 function deleteHouse() {
     console.log('deleting a house');
     let id = $(this).closest('tr').data('id');
@@ -54,4 +60,13 @@ function getHouse(query){
     }).catch( function(err){
         console.log(err);
     });
+}
+
+function displayHouse(house){ //need VAR to be called in function
+    console.log('in displayHouse', house ) // call same VAR again in log
+    $('#houseOut').empty();
+    for (let i=0; i<house.length; i++) {
+        let taco = house[i];
+        let $card = $(`card`);
+    }
 }
