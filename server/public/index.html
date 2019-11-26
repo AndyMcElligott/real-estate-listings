@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Zzilow</title>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand|Saira+Stencil+One|Ubuntu&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One|Ubuntu&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap-4.3.1.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -17,36 +18,37 @@
     <h3>We offer homes to people who want them</h3>
   </header>
   <div id="main">
-    
-
       <div class="row">
-        <div class="col-4">
+        <div class="col-3">
+          <h2>Add Property</h2>
           <form>
-            <div class="form-group">
-              <label for="typeIn">Sell or Rent</label>
-              <select class="form-control" id="typeIn">
+            <div class="form-group row w-50">
+                <label for="typeIn">Sell or Rent</label>
+                <select class="form-control" id="typeIn">
                 <option>-select-</option>
                 <option>Sale</option>
                 <option>Rent</option>
               </select>
-            </div>
-            <div class="form-group">
+            </div> 
+            <div class="form-group row w-75">
               <label for="cityIn">City</label>
               <input type="text" class="form-control" id="cityIn" placeholder="Enter City">
             </div>
-            <div class="form-group">
-              <label for="costIn">Cost</label>
-              <input type="number" class="form-control" id="costIn" placeholder="Enter Cost">
+            <div class="form-group row w-75">
+                <label for="costIn">Cost</label>
+                <input type="number" class="form-control" id="costIn" placeholder="Enter Cost">
             </div>
-            <div class="form-group">
-              <label for="sqftIn">Square Feet</label>
-              <input type="number" class="form-control" id="sqftIn" placeholder="Enter Square Footage">
+            <div class="form-group row w-75">
+                <label for="sqftIn">Square Feet</label>
+                <input type="number" class="form-control" id="sqftIn" placeholder="Enter Square Footage">
             </div>
-            <div class="form-group">
+            <div class="form-group row w-75">
               <label for="imageIn">Image</label>
               <input type="text" class="form-control" id="imageIn" placeholder="Enter Image URL">
             </div>
-            <button id="submitButton" type="submit" class="btn btn-success">Submit</button>
+            <div class="form-group row">
+              <button type="submit" id="submitButton" class="btn btn-success">Submit</button>
+            </div>
           </form>
         </div>
         <div class="col-8">
@@ -82,7 +84,8 @@
                   </div>
                 </div>
             </div>
-          <div id="houseOut">
+            <div id="houseOut" class="row">
+            </div>
           </div>
         </div>
       </div>

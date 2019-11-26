@@ -87,13 +87,13 @@ function displayHouse(house){ //need VAR to be called in function
         let taco = house[i];
         let newEl = $(`
         <div class="card" style="width: 18rem;">
-          <img src="${taco.image_path}" class="card-img-top" alt="...">
+          <img src="${taco.image_path}" class="card-img-top" alt="A $${taco.cost} house in ${taco.city}">
           <div class="card-body">
               <h5>${taco.city}</h5>
               <h5>$${taco.cost}</h5>
               <h5>${taco.type}</h5>
               <p class="card-text">${taco.sqft} ft<sup>2</sup></p>
-              <a href="#" class="btn btn-primary delete">DELETE</a>
+              <a href="#" class="btn btn-outline-danger delete">DELETE</a>
           </div>
         </div>
         `);
