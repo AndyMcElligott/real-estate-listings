@@ -7,7 +7,8 @@ $('document').ready(function(){
     getHouse();
 })
 
-function deleteHouse() {
+function deleteHouse(event) {
+    event.preventDefault();
     console.log('deleting a house');
     let id = $(this).closest('.card').data('id');
     $.ajax({
@@ -21,7 +22,9 @@ function deleteHouse() {
     })
 }
 
-function addHouse() {
+function addHouse( e ) {
+    e.preventDefault();
+
     console.log('in POST CLIENT');
     let objectToSend = {
         cost: $('#costIn').val(),
@@ -68,12 +71,11 @@ function getHouse(){
         queried = true;
     }
     url += `${(queried)?'&':'?'}order=${$('#orderByIn').val()}&reverse=${document.getElementById("orderReverseIn").checked}`;
-    console.log(url);
+
     $.ajax({
         type: 'GET',
         url: url
     }).then( function( response ){
-        console.log(response);
         displayHouse(response);
     }).catch( function(err){
         console.log(err);
