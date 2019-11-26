@@ -41,6 +41,13 @@ router.get('/', (req, res)=>{
         config.push(`${req.query.city}`);
         queried = true;
     }
+    if(req.query.order){
+        queryText += ` ORDER BY ${req.query.order}`;
+        if(req.query.reverse === 'true'){
+            queryText += ' DESC';
+        }
+    }
+
     queryText += ';';
     pool.query(queryText, config)
         .then((result)=>{
