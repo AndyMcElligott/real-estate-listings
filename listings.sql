@@ -2,7 +2,7 @@ CREATE TABLE listings(
 	"id" SERIAL PRIMARY KEY,
 	"cost" INTEGER,
 	"sqft" INTEGER,
-	"type" VARCHAR(128),
+	"type" VARCHAR(32),
     "city" VARCHAR (64),
     "image_path" VARCHAR(256)
 );
