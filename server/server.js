@@ -12,6 +12,7 @@ const houses = require('./routes/house.router');
 
 // Serve back static files by default
 app.use(express.static('server/public'));
+
 app.use('/house', houses);
 
 app.listen(PORT, () => {
