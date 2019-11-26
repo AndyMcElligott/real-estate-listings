@@ -1,3 +1,9 @@
+$('document').ready(function(){
+    $('#filterIn').on('change', function(){ getHouse() });
+
+    getHouse();
+})
+
 function deleteHouse() {
     console.log('deleting a house');
     let id = $(this).closest('tr').data('id');
@@ -40,16 +46,20 @@ function addHouse() {
 
 function getHouse(query){
     let url = '/house';
+
     if(query){
-        if(query[0] === '/'){
-            query = query.split('/', 1)[1];
-        }
+        if(query[0] === '/') query = query.split('/', 1)[1];
         url += `?type=${query}`;
+    } else {
+        query = $('#filterIn').val();
+        if(query) url += `?type=${query}`;
     }
+
     $.ajax({
         type: 'GET',
         url: url
     }).then( function( response ){
+        console.log(response);
         displayHouse(response);
     }).catch( function(err){
         console.log(err);
