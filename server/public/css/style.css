@@ -1,6 +1,7 @@
 #main {
     width: 80%;
-    margin: 0 auto
+    margin: 0 auto;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 header {
@@ -8,4 +9,19 @@ header {
     border: solid black 1px;
     padding: 1rem;
     margin-bottom: 4rem;
+    font-family: 'Saira Stencil One', cursive;
+    color: rgb(247, 248, 211);
+    background-color: black;
+}
+
+body {
+    background-color: rgb(247, 248, 211);
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+    font-size: 1.5rem;
 }
