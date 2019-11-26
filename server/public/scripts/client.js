@@ -1,7 +1,8 @@
-console.log( 'js' );
-
-$(document).ready(function(){
-
+$('document').ready(function(){
+    $('#typeFilterIn').on('change', function(){ getHouse() });
+    $('#cityFilterIn').on('change', function(){ getHouse() });
+    populateCities();
+    getHouse();
 })
 
 function deleteHouse() {
@@ -44,18 +45,24 @@ function addHouse() {
     })
 }
 
-function getHouse(query){
+function getHouse(){
     let url = '/house';
+    let queried = false;
+
+    let query = $('#typeFilterIn').val();
     if(query){
-        if(query[0] === '/'){
-            query = query.split('/', 1)[1];
-        }
         url += `?type=${query}`;
+        queried = true;
     }
+
+    query = $('#cityFilterIn').val();
+    if(query) url += `${(queried) ? '&' : '?'}city=${query}`;
+
     $.ajax({
         type: 'GET',
         url: url
     }).then( function( response ){
+        console.log(response);
         displayHouse(response);
     }).catch( function(err){
         console.log(err);
@@ -81,4 +88,18 @@ function displayHouse(house){ //need VAR to be called in function
         $(`#houseOut`).append(newEl);
         newEl.data('id', taco.id);
     }
+}
+ 
+function populateCities(){
+    $.ajax({
+        type: 'GET',
+        url: '/house/cities'
+    }).then( function(response){
+        let el = $('#cityFilterIn');
+        for(let opt of response){
+            el.append(`<option val="${opt.city}">${opt.city}</option>`);
+        }
+    }).catch( function(err){
+        console.log(err);
+    });
 }

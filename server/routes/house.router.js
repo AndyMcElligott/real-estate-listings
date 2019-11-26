@@ -28,15 +28,21 @@ router.post('/', (req, res)=>{
 }); // end POST
 
 router.get('/', (req, res)=>{
+    let queried = false;
+    let config = [];
     let queryText = `SELECT * FROM "listings"`;
     if(req.query.type){
-        let type = req.query.type;
-        queryText += ` WHERE "type"='${(type==='rent') ? 'rent' : 'sale'}';`
-    } else {
-        queryText += ';';
+        queryText += ` WHERE "type" = $${config.length + 1}`;
+        config.push(`${req.query.type}`);
+        queried = true;
     }
-    console.log(queryText);
-    pool.query(queryText)
+    if(req.query.city){
+        queryText += ` ${(queried) ? 'AND' : 'WHERE'} "city" ILIKE $${config.length + 1}`;
+        config.push(`${req.query.city}`);
+        queried = true;
+    }
+    queryText += ';';
+    pool.query(queryText, config)
         .then((result)=>{
             res.send(result.rows);
         }).catch(error=>{
@@ -44,5 +50,16 @@ router.get('/', (req, res)=>{
             res.sendStatus(500);
     });
 });
+
+router.get('/cities', (req, res)=>{
+    let queryText = `SELECT DISTINCT "city" FROM "listings" ORDER BY "city" ASC;`
+    pool.query(queryText)
+        .then((result) => {
+            res.send(result.rows);
+        }).catch(error=>{
+            console.log('ERROR GETTING cities ---> ', error);
+            res.sendStatus(500);
+    });
+})
 
 module.exports = router;
