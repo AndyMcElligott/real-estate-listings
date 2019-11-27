@@ -29,6 +29,7 @@ router.get('/', (req, res)=>{
     let queried = false;
     let config = [];
     let queryText = `SELECT * FROM "listings"`;
+
     if(req.query.type){
         queryText += ` WHERE "type" ILIKE $${config.length + 1}`;
         config.push(`${req.query.type}`);
