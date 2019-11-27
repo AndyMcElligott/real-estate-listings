@@ -52,9 +52,9 @@
           </form>
         </div>
         <div class="col-8 text-center">
-            <div class="form-inline m-3">
+            <div class="form-inline m-3 text-center">
                 <div class="form-group my-1">
-                  <label for="typeFilterIn">Filter by type: </label>
+                  <label class="filterLabel" for="typeFilterIn">Filter by type: </label>
                   <select class="form-control orderInputs mx-2" id="typeFilterIn">
                     <option value="">None</option>
                     <option value="sale">For Sale</option>
@@ -62,14 +62,14 @@
                   </select>
                 </div>
                 <div class="form-group my-1">
-                  <label for="cityFilterIn">Filter by city: </label>
+                  <label class="filterLabel" for="cityFilterIn">Filter by city: </label>
                   <select class="form-control orderInputs mx-2" id="cityFilterIn">
                     <option value="">Any</option>
                     <!-- Filled by AJAX -->
                   </select>
                 </div>
                 <div class="form-group my-1">
-                  <label for="orderIn">Order by: </label>
+                  <label class="filterLabel" for="orderIn">Order by: </label>
                   <select class="form-control orderInputs mx-2" id="orderByIn">
                     <option value="cost">Cost</option>
                     <option value="city">Square Foot</option>
@@ -78,7 +78,7 @@
                 <div class="form-group my-1">
                   <div class="form-check orderInputs">
                     <input id="orderReverseIn" type="checkbox" val="Reverse" class="form-check-input orderInputs">
-                    <label for="orderReverseIn" class="form-check-label">
+                    <label class="filterLabel" for="orderReverseIn" class="form-check-label">
                         Reverse
                     </label>
                   </div>
