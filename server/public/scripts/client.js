@@ -9,7 +9,6 @@ $('document').ready(function(){
 
 function deleteHouse(event) {
     event.preventDefault();
-    console.log('deleting a house');
     let id = $(this).closest('.card').data('id');
     $.ajax({
         type: 'DELETE',
@@ -25,7 +24,6 @@ function deleteHouse(event) {
 function addHouse( e ) {
     e.preventDefault();
 
-    console.log('in POST CLIENT');
     let objectToSend = {
         cost: $('#costIn').val(),
         sqft: $('#sqftIn').val(),
@@ -38,7 +36,6 @@ function addHouse( e ) {
         url: '/house',
         data: objectToSend
     }).then( function( response){
-        console.log('back from POST CLIENT:', response);
         // display function goes here ----!
         $('#costIn').val('');
         $('#sqftIn').val('');
@@ -83,16 +80,15 @@ function getHouse(){
 }
 
 function displayHouse(house){ //need VAR to be called in function
-    console.log('in displayHouse', house ) // call same VAR again in log
     $('#houseOut').empty();
     for (let i=0; i<house.length; i++) {
         let taco = house[i];
         let newEl = $(`
-        <div class="card" style="width: 11rem;">
+        <div class="card" style="width: 18rem;">
           <img src="${taco.image_path}" class="card-img-top" alt="A $${taco.cost} house in ${taco.city}">
           <div class="card-body">
               <h5>${taco.city}</h5>
-              <h5 id="boldCost">$${numberWithCommas(taco.cost)}</h5>
+              <h5>$${taco.cost}</h5>
               <h5>${firstLetterUpper(taco.type)}</h5>
               <p class="card-text">${taco.sqft} ft<sup>2</sup></p>
               <a href="#" class="btn btn-outline-danger delete">DELETE</a>
