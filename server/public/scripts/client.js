@@ -7,7 +7,8 @@ $('document').ready(function(){
     getHouse();
 })
 
-function deleteHouse() {
+function deleteHouse(event) {
+    event.preventDefault();
     console.log('deleting a house');
     let id = $(this).closest('.card').data('id');
     $.ajax({
@@ -21,7 +22,9 @@ function deleteHouse() {
     })
 }
 
-function addHouse() {
+function addHouse( e ) {
+    e.preventDefault();
+
     console.log('in POST CLIENT');
     let objectToSend = {
         cost: $('#costIn').val(),
@@ -68,12 +71,11 @@ function getHouse(){
         queried = true;
     }
     url += `${(queried)?'&':'?'}order=${$('#orderByIn').val()}&reverse=${document.getElementById("orderReverseIn").checked}`;
-    console.log(url);
+
     $.ajax({
         type: 'GET',
         url: url
     }).then( function( response ){
-        console.log(response);
         displayHouse(response);
     }).catch( function(err){
         console.log(err);
@@ -91,7 +93,7 @@ function displayHouse(house){ //need VAR to be called in function
           <div class="card-body">
               <h5>${taco.city}</h5>
               <h5 id="boldCost">$${numberWithCommas(taco.cost)}</h5>
-              <h5>${taco.type}</h5>
+              <h5>${firstLetterUpper(taco.type)}</h5>
               <p class="card-text">${taco.sqft} ft<sup>2</sup></p>
               <a href="#" class="btn btn-outline-danger delete">DELETE</a>
           </div>
@@ -114,8 +116,4 @@ function populateCities(){
     }).catch( function(err){
         console.log(err);
     });
-}
-
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
