@@ -1,5 +1,5 @@
 #main {
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
     font-family: 'Quicksand', sans-serif;
 }
@@ -10,12 +10,12 @@ header {
     padding: 1rem;
     margin-bottom: 4rem;
     font-family: 'Saira Stencil One', cursive;
-    color: rgb(247, 248, 211);
+    color: #f7f8d3;
     background-color: black;
 }
 
 body {
-    background-color: rgb(247, 248, 211);
+    background-color: #f7f8d3;
 }
 
 h3 {
@@ -24,12 +24,13 @@ h3 {
 }
 
 label {
-    font-size: 1.5rem;
+    font-size: 1.25rem
 }
 
 .col-8 {
     padding: 1rem;
     border: solid black 2px;
+    margin-bottom: 2rem
 }
 
 .card {
@@ -41,9 +42,23 @@ label {
 }
 
 #houseOut {
-    margin-left: 3rem;
+    margin-left: 4rem
 }
 
 form {
-    margin-top: 3rem
+    margin-top: 2.5rem
+}
+
+#boldCost {
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+h2 {
+    text-decoration: underline
+}
+
+#submitButton {
+    margin-top: 1em
 }
