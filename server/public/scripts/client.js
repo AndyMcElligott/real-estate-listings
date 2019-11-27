@@ -93,7 +93,7 @@ function displayHouse(house){ //need VAR to be called in function
           <div class="card-body">
               <h5>${taco.city}</h5>
               <h5>$${taco.cost}</h5>
-              <h5>${taco.type}</h5>
+              <h5>${firstLetterUpper(taco.type)}</h5>
               <p class="card-text">${taco.sqft} ft<sup>2</sup></p>
               <a href="#" class="btn btn-outline-danger delete">DELETE</a>
           </div>
@@ -116,4 +116,10 @@ function populateCities(){
     }).catch( function(err){
         console.log(err);
     });
+}
+
+function firstLetterUpper(str){
+    let out = str.split('');
+    out[0] = out[0].toUpperCase();
+    return out.join('');
 }
